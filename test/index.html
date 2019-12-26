@@ -25,10 +25,12 @@
       import Form from './components/Form.js';
       import Func from './components/Func.js';
       import HeaderFooterHidden from './components/HeaderFooterHidden.js';
+      import Attr from './components/Attr.js';
 
       init({
         state: {
-          foo: false
+          foo: false,
+          route: 'roulette'
         },
         views: {
           '/': Home,
@@ -36,7 +38,8 @@
           'contact': Contact,
           'header-footer-hidden': HeaderFooterHidden,
           'form': Form,
-          'func': Func
+          'func': Func,
+          'attr': Attr
         },
         viewElementId: 'app-body',
         header: {
