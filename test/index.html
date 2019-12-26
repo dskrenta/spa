@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>SPA</title>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+
+    <div id="app-header"></div>
+    <div id="app-body"></div>
+    <div id="app-footer"></div>
+
+    <script type="module" src="../src/spa.js"></script>
+    <script type="module">
+      import { init } from '../src/spa.js';
+
+      import Footer from './components/Footer.js';
+      import Header from './components/Header.js';
+      import Home from './components/Home.js';
+      import About from './components/About.js';
+      import Contact from './components/Contact.js';
+
+      init({
+        state: {
+          foo: false
+        },
+        views: {
+          '/': Home,
+          'about': About,
+          'contact': Contact
+        },
+        viewElementId: 'app-body',
+        header: {
+          elementId: 'app-header',
+          component: Header
+        },
+        footer: {
+          elementId: 'app-footer',
+          component: Footer
+        }
+      });
+    </script>
+  </body>
+</html>
