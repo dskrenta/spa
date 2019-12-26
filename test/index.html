@@ -23,6 +23,7 @@
       import Home from './components/Home.js';
       import About from './components/About.js';
       import Contact from './components/Contact.js';
+      import HeaderFooterHidden from './components/HeaderFooterHidden.js';
 
       init({
         state: {
@@ -31,7 +32,8 @@
         views: {
           '/': Home,
           'about': About,
-          'contact': Contact
+          'contact': Contact,
+          'header-footer-hidden': HeaderFooterHidden
         },
         viewElementId: 'app-body',
         header: {

@@ -16,6 +16,10 @@ let pages = {};
 
 let appBodyId = '';
 
+let headerId = '';
+
+let footerId = '';
+
 async function mountComponentToDOM(elementId, component) {
   try {
     document.getElementById(elementId).innerHTML = await component.render();
@@ -28,6 +32,10 @@ async function mountComponentToDOM(elementId, component) {
 async function router() {
   try {
     const request = parseUrl();
+    document.getElementById(headerId).hidden = false;
+    document.getElementById(footerId).hidden = false;
+    if (pages[request.resource].hideHeader) document.getElementById(headerId).hidden = true;
+    if (pages[request.resource].hideFooter) document.getElementById(footerId).hidden = true;
     const page = request.resource in pages ? pages[request.resource] : pages['/'];
     page.request = request;
     mountComponentToDOM(appBodyId, page);
@@ -46,10 +54,11 @@ export function init({
 }) {
   window.addEventListener('load', router);
   window.addEventListener('hashchange', router);
-
   appBodyId = viewElementId;
   window.state = state;
   pages = views;
+  headerId = header.elementId;
+  footerId = footer.elementId;
   mountComponentToDOM(header.elementId, header.component);
   mountComponentToDOM(footer.elementId, footer.component);
 }
