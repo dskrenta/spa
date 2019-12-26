@@ -46,7 +46,8 @@ const Form = {
       let repeatPass = document.getElementById('repeat_pass_input');
       if (pass.value != repeatPass.value) {
           alert (`The passwords dont match`)
-      } else if (email.value =='' | pass.value == '' | repeatPass == '') {
+      }
+      else if (email.value =='' || pass.value == '' || repeatPass == '') {
           alert (`The fields cannot be empty`)
       }
       else {
