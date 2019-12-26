@@ -40,7 +40,7 @@ const Form = {
     `;
   },
   afterRender: async () => {
-    document.getElementById('register_submit_btn').addEventListener ('click',  () => {
+    document.getElementById('register_submit_btn').addEventListener('click', () => {
       let email = document.getElementById('email_input');
       let pass = document.getElementById('pass_input');
       let repeatPass = document.getElementById('repeat_pass_input');
