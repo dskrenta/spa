@@ -42,6 +42,12 @@ async function router() {
     document.getElementById(footerId).hidden = false;
     const page = request.resource in pages ? pages[request.resource] : pages['/'];
     page.request = request;
+    if (page.auth) {
+      const auth = await page.auth();
+      if (!auth) {
+        page = pages['/'];
+      }
+    }
     if (page.hideHeader) document.getElementById(headerId).hidden = true;
     if (page.hideFooter) document.getElementById(footerId).hidden = true;
     mountComponentToDOM(appBodyId, page);
