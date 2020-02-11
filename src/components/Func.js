@@ -1,4 +1,3 @@
-
 const Func = {
   render: async () => {
     return `
@@ -9,6 +8,7 @@ const Func = {
   afterRender: async () => {
     document.getElementById('button').addEventListener('click', () => {
       alert('Clicked!');
+      window.navigate('#contact');
     })
   }
 };

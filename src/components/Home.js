@@ -1,4 +1,4 @@
-import { addUpdateMapping } from '../../src/spa.js';
+import { addUpdateMapping } from '../spa.js';
 
 const Home = {
   render: async () => {

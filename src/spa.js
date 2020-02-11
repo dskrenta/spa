@@ -12,6 +12,10 @@ window.localStore = {
   del: (key) => localStorage.removeItem(key)
 };
 
+window.navigate = (path = '#someRoute') => {
+  window.location.href = window.location.origin + path;
+}
+
 let pages = {};
 
 let appBodyId = '';
