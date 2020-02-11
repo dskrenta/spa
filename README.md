@@ -1,5 +1,5 @@
 # spa
-Vanilla JS single page ppplication template
+Vanilla JS single page appplication template
 
 ## Run
 
